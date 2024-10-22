@@ -21,7 +21,7 @@ function Dashboard() {
 
       try {
         const response = await axios.post(
-          "https://pdftoword-zc14.onrender.com",
+          "https://pdftoword-zc14.onrender.com/convert",
           formData,
           {
             responseType: "blob",
