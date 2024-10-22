@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Dashboard.css";
 
 function Dashboard() {
   const [pdfFile, setPdfFile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  const handleFileChange = (e) => {
-    setPdfFile(e.target.files[0]);
+  const handleFileChange = (event) => {
+    setPdfFile(event.target.files[0]);
   };
 
   const handleConvertToWord = async () => {
@@ -15,13 +17,20 @@ function Dashboard() {
       formData.append("file", pdfFile);
 
       setLoading(true);
+      setProgress(0);
 
       try {
         const response = await axios.post(
-          "https://pdftoword-zc14.onrender.com/convert",
+          "https://pdftoword-zc14.onrender.com",
           formData,
           {
-            responseType: "blob", // Important for downloading the file
+            responseType: "blob",
+            onUploadProgress: (progressEvent) => {
+              const percentCompleted = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total
+              );
+              setProgress(percentCompleted);
+            },
           }
         );
 
@@ -48,11 +57,30 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>PDF to Word Converter</h1>
-      <input type="file" accept="application/pdf" onChange={handleFileChange} />
-      <button onClick={handleConvertToWord} disabled={loading}>
-        {loading ? "Converting..." : "Convert to Word"}
-      </button>
+      <h1 className="title">PDF to Word Converter</h1>
+      <div className="input-container">
+        <input
+          type="file"
+          className="file-input"
+          accept=".pdf"
+          onChange={handleFileChange}
+        />
+        <button
+          className="convert-button"
+          onClick={handleConvertToWord}
+          disabled={loading || !pdfFile}
+        >
+          {loading ? "Converting..." : "Convert to Word"}
+        </button>
+        {loading && (
+          <div className="loading-bar">
+            <div
+              className="loading-bar-fill"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
