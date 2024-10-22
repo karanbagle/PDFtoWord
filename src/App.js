@@ -1,16 +1,13 @@
-// App.js
 import React from "react";
 import Dashboard from "./components/Dashboard";
-import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/PDFtoWord">
-      <div className="App">
-        <Dashboard />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <h1>Loading PDF to Word Converter...</h1>
+      <Dashboard />
+    </div>
   );
 }
 
