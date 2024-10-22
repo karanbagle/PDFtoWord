@@ -1,74 +1,134 @@
-<<<<<<< HEAD
-# PDFtoWord
-=======
-# Getting Started with Create React App
+# PDF to Word Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) ![Render](https://img.shields.io/badge/Render-0095D5?style=for-the-badge&logo=render&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This **PDF to Word Converter** project allows users to upload a PDF file and convert it into a Word document (.docx). The application consists of a frontend built with React and a backend built using Flask. It is deployed on Render and Netlify to provide a seamless online document conversion experience, which can further be leveraged as **Software as a Service (SaaS)**.
 
-### `npm start`
+### Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Frontend hosted on Netlify](https://sprightly-medovik-e5dd9a.netlify.app/)
+- [Backend hosted on Render](https://pdftoword-zc14.onrender.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **PDF to Word Conversion**: Upload a PDF and download a Word (.docx) version.
+- **Real-Time Progress Indicator**: Loading bar displaying percentage completion.
+- **Simple Interface**: User-friendly design for ease of use.
+- **Responsive Design**: Supports both mobile and desktop views.
+- **Backend API Integration**: Seamless interaction between frontend and backend for conversion.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+### Files and Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:**
+  - **App.js**: Entry point for the React application that renders the `Dashboard` component.
+  - **Dashboard.js**: Component handling file input, PDF conversion request, and downloading the Word file.
+  - **Dashboard.css**: Styling for the `Dashboard` component to ensure a consistent and appealing user interface.
+  - **index.js**: Renders the main `App` component and initializes the frontend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Backend:**
+  - **server.py**: Handles the backend logic using Flask, allowing the conversion from PDF to Word using the `pdf2docx` library.
+  - **requirements.txt**: Lists all dependencies for the backend (e.g., Flask, pdf2docx).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **General:**
+  - **package.json**: Manages project dependencies and scripts for the frontend.
+  - **index.html**: The main HTML template for the React application.
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: 
+  - [React](https://reactjs.org/)
+  - [Axios](https://axios-http.com/)
+  - HTML, CSS for styling
+- **Backend**: 
+  - [Flask](https://flask.palletsprojects.com/)
+  - [pdf2docx](https://pypi.org/project/pdf2docx/) for PDF conversion
+- **Hosting**: 
+  - [Netlify](https://www.netlify.com/) for the frontend
+  - [Render](https://render.com/) for the backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Node.js** and **npm**: Install [Node.js](https://nodejs.org/).
+- **Python 3**: Install [Python](https://www.python.org/downloads/).
+- **Flask**: Install Flask using `pip install Flask`.
+- **pdf2docx**: Install the library for PDF to Word conversion with `pip install pdf2docx`.
 
-## Learn More
+### Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Clone the repository**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```sh
+   git clone https://github.com/karanbagle/PDFtoWord.git
+   cd PDFtoWord
+   ```
 
-### Code Splitting
+2. **Install frontend dependencies**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```sh
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+3. **Run the frontend locally**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```sh
+   npm start
+   ```
 
-### Making a Progressive Web App
+4. **Backend setup**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   - Navigate to the backend directory and create a virtual environment:
+     ```sh
+     python3 -m venv env
+     source env/bin/activate
+     ```
+   - Install backend dependencies:
+     ```sh
+     pip install Flask pdf2docx flask-cors
+     ```
+   - Run the Flask server:
+     ```sh
+     python server.py
+     ```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Frontend (Netlify)
 
-### `npm run build` fails to minify
+- Deploy the frontend by connecting the GitHub repository to Netlify.
+- Set the build command to `npm run build` and publish directory to `build`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> c51670e (Initialize project using Create React App)
+#### Backend (Render)
+
+- Deploy the backend by connecting the GitHub repository to Render.
+- Set up a Python environment, configure the `server.py` file to run as the entry point, and open port `5000`.
+
+## How to Use as SaaS
+
+This application can be used as a SaaS by providing the following features:
+
+1. **Authentication and User Accounts**: Add a login and registration system to manage user sessions.
+2. **Subscription Plans**: Integrate a payment gateway to allow users to subscribe for different usage plans (e.g., number of conversions per month).
+3. **API Access**: Provide API access to users who want to use the document conversion service programmatically in their own applications.
+4. **Custom Domains**: Allow users to use the service on custom domains for businesses or private use.
+
+## Stack Icons
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+- ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+- ![Render](https://img.shields.io/badge/Render-0095D5?style=for-the-badge&logo=render&logoColor=white)
+- ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or collaboration, reach out at [karanlalitbagle@gmail.com](mailto:karanlalitbagle@gmail.com).
+
