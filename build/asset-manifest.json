@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PDFtoWord/static/css/main.f855e6bc.css",
+    "main.js": "/PDFtoWord/static/js/main.9a677f3c.js",
+    "index.html": "/PDFtoWord/index.html",
+    "main.f855e6bc.css.map": "/PDFtoWord/static/css/main.f855e6bc.css.map",
+    "main.9a677f3c.js.map": "/PDFtoWord/static/js/main.9a677f3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.9a677f3c.js"
+  ]
+}
